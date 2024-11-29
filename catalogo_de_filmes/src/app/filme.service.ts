@@ -34,4 +34,3 @@ export interface APIresposta{
   total_page : number;
   total_results : number;
 }
-
