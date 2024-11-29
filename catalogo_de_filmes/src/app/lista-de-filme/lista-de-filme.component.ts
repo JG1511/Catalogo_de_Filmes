@@ -17,14 +17,17 @@ export class ListaDeFilmeComponent implements OnInit {
   ngOnInit(): void {};
   
   buscarFilmes (busca : string) : void {
-    this.filmeService.buscarFilme(busca).subscribe(
-      (res) => {
-        this.filmes = res.results // armazena os filmes encontrados na array filmes 
-      },(error) =>{
-        console.error('Erro ao buscar filmes:', error);
-      }
-    );
-      
+    this.filmeService.buscarFilme(busca).subscribe({ // o subscribe é usado para escutar o observable 
+      next: (res) => { // é chamado quando observable emite um valor e o res representa um resultado emitido pela api
+          this.filmes = res.results; // a lista de filmes rescebe o filme que ele é chamado
+      },
+      error: (error) => { // quando acontece algum problema com o HTTP
+          console.error('Erro ao buscar filmes:', error);
+      },
+      complete: () => {
+          console.log('Requisição completa!'); // É chamado com é completado 
+      },
+  });
     
   }
 
