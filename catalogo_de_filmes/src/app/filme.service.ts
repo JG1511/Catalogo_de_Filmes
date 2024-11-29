@@ -30,7 +30,7 @@ export interface Filme{ // ao inves de utilizar o any , se faz uma interfaces pa
 
 export interface APIresposta{
   page : number;
-  result : Filme[];
+  results : Filme[];
   total_page : number;
   total_results : number;
 }
