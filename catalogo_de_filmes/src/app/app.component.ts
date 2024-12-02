@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+
 import { FormsModule } from '@angular/forms';
 import { BuscaFilmeComponent } from "./busca-filme/busca-filme.component";
 import { ListaDeFilmeComponent } from "./lista-de-filme/lista-de-filme.component";
 import { FilmesService } from './filme.service';
+
 
 @Component({
   selector: 'app-root',

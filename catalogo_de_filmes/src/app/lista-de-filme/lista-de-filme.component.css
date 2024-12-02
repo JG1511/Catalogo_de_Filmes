@@ -1,0 +1,68 @@
+/* Definindo a cor dourada para a nota */
+.text-gold {
+    color: #FFD700; /* Cor dourada */
+    font-weight: bold;
+}
+
+/* Responsividade para os cards */
+.container {
+    padding: 20px;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-10px); /* O card sobe um pouco */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumenta a sombra para dar o efeito de elevação */
+    
+}
+
+.card-img-top {
+    height: 250px;
+    object-fit: cover; /* Ajusta a imagem para não distorcer */
+}
+
+/* Exibindo os cards responsivamente */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espaço entre os cards */
+}
+
+.card-body {
+    padding: 15px;
+}
+
+/* Responsividade para cada tamanho de tela */
+@media (max-width: 575px) {
+    .col-12 {
+        flex: 1 1 100%;
+    }
+}
+
+@media (min-width: 576px) {
+    .col-sm-6 {
+        flex: 1 1 48%; /* 2 cards por linha em telas pequenas */
+    }
+}
+
+@media (min-width: 768px) {
+    .col-md-4 {
+        flex: 1 1 31%; /* 3 cards por linha em telas médias */
+    }
+}
+
+@media (min-width: 992px) {
+    .col-lg-3 {
+        flex: 1 1 23%; /* 4 cards por linha em telas grandes */
+    }
+}
+
+/* Ajustando o botão */
+.btn {
+    background-color: #007bff;
+    color: white;
+}

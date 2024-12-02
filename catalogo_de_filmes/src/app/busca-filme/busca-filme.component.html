@@ -1,6 +1,16 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #343a40;">
+    <div class="container-fluid">
+        <!-- Título à esquerda -->
+        <a class="navbar-brand text-light" href="#">Buscar Filme</a>
 
-<div class="busca-filme">
-    <h2>Buscar filme</h2>
-    <input type="text" [(ngModel)]="busca" placeholder="Digite o nome do filme" />
-    <button (click)="buscarFilmes()">buscar</button>
-</div>
+        <!-- Formulário de busca à direita -->
+        <div class="d-flex ms-auto">
+            <input type="text" [(ngModel)]="busca" placeholder="Digite o nome do filme" class="form-control me-2"
+                (keydown.enter)="buscarFilmes()" />
+            <button class="btn btn-outline-light" (click)="buscarFilmes()">Buscar</button>
+        </div>
+    </div>
+</nav>
+
+<!-- Adicionando um espaçamento para compensar a navbar fixa -->
+<div class="spacer" style="height: 70px;"></div>
