@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, input, OnInit } from '@angular/core';
 import { FilmesService } from '../filme.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { FilmesService } from '../filme.service';
 })
 export class ListaDeFilmeComponent implements OnInit {
 
-  filmes : any[] = []; // array para armazenar os filmes encontrados
+  @Input() filmes : any[] = []; // array para armazenar os filmes encontrados
 
   constructor(private filmeService : FilmesService){};
 

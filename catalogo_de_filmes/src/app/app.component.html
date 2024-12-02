@@ -1,4 +1,4 @@
 <div class="app">
   <app-busca-filme (filmeBuscado)="buscarFilmes($event)" ></app-busca-filme>
-  <app-lista-de-filme></app-lista-de-filme>
+  <app-lista-de-filme [filmes]="filmes"></app-lista-de-filme>
 </div>

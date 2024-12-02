@@ -1,3 +1,6 @@
+
+
+
 <div>
     @if(filmes.length > 0){
         <h3>Filmes Encontrados:</h3>
@@ -5,7 +8,7 @@
             @for (filme of filmes; track $index) {
                 <h4>{{filme.title}}</h4>
                 <p>{{filme.overview}}</p>
-                <img src="https://image.tmdb.org/t/p/w500' + filme.poster_path" alt="{{ filme.title }}">
+                <img [src]="'https://image.tmdb.org/t/p/w500' + filme.poster_path" alt="{{ filme.title }}">
             }
         </div>
     }
