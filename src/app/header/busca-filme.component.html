@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #343a40;">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+    <!-- Título à esquerda -->
+    <a class="navbar-brand text-light" href="#">Buscar Filme</a>
+
+    <!-- Link para mostrar animes -->
+    <a href="javascript:void(0)" (click)="carregarAnimesEmAlta()" class="text-light">Tendências</a>
+    <a href="javascript:void(0)" (click)="carregarFilmesEmCartaz()" class="text-light">Cinema</a>
+
+    <!-- Formulário de busca à direita -->
+    <div class="d-flex">
+      <input type="text" [(ngModel)]="busca" placeholder="Digite o nome do filme" class="form-control me-2"
+        (keydown.enter)="buscarFilmes()" />
+      <button class="btn btn-outline-light" (click)="buscarFilmes()">Buscar</button>
+    </div>
+  </div>
+</nav>
+
+<!-- Exibindo os animes (fora do header, no corpo da página) -->
+<app-animes></app-animes>
+<app-maiores-notas></app-maiores-notas>
