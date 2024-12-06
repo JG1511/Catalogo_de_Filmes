@@ -1,49 +1,51 @@
-import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Output, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MaioresNotasComponent } from '../cinema/maiores-notas.component';
 import { AnimesComponent } from "../tendencias/animes.component";
-
-
 
 @Component({
   selector: 'app-busca-filme',
   standalone: true,
   imports: [FormsModule, AnimesComponent, MaioresNotasComponent],
   templateUrl: './busca-filme.component.html',
-  styleUrl: './busca-filme.component.css'
+  styleUrls: ['./busca-filme.component.css']  // Corrigido de 'styleUrl' para 'styleUrls'
 })
-export class BuscaFilmeComponent {
-  busca : string = ''
+export class BuscaFilmeComponent implements AfterViewInit {
+  busca: string = '';
+  mostrarFilmesEmCartaz: boolean = false;
+  mostrarAnimesEmAlta: boolean = false;
+  @Output() filmeBuscado = new EventEmitter<string>();
 
-  @Output() filmeBuscado = new EventEmitter<string>(); // emite o texto da basca para o componente pai(appcomponent)
+  @ViewChild(AnimesComponent) animesComponent!: AnimesComponent;
+  @ViewChild(MaioresNotasComponent) maioresnotasComponent!: MaioresNotasComponent;
 
-  buscarFilmes(): void { // Event Binding
-    if(this.busca.trim() === ''){ // verifica se a está em branco, se estiver ele emite um alerta 
+  ngAfterViewInit(): void {
+    // Aqui garantimos que os componentes filhos foram inicializados corretamente
+    console.log(this.animesComponent);
+    console.log(this.maioresnotasComponent);
+  }
+
+  buscarFilmes(): void {
+    if (this.busca.trim() === '') {
       alert("Por favor, insira o nome do filme");
       return;
     }
-    this.filmeBuscado.emit(this.busca); // emite o termo da busca para o componente pai(onde a listagem de filme será exibida)
+    this.filmeBuscado.emit(this.busca);
   }
 
-  @ViewChild(AnimesComponent) animesComponent!: AnimesComponent; // Referência para o AnimesComponent
-
-  // Método para chamar a função do componente Animes
   carregarAnimesEmAlta(): void {
-    // Chamando o método do AnimesComponent diretamente
+    this.mostrarAnimesEmAlta = true;
+    this.mostrarFilmesEmCartaz = false;
     if (this.animesComponent) {
-      this.animesComponent.carregarAnimesEmAlta();  // Chama o método para carregar animes
+      this.animesComponent.carregarAnimesEmAlta();
     }
   }
 
-  @ViewChild(MaioresNotasComponent) maioresnotasComponent!: MaioresNotasComponent;
-
-    carregarFilmesEmCartaz(): void {
-  if (this.maioresnotasComponent) {
-    this.maioresnotasComponent.carregarFilmesEmCartaz();  // Chama o método para carregar os filmes
+  carregarFilmesEmCartaz(): void {
+    this.mostrarFilmesEmCartaz = true;
+    this.mostrarAnimesEmAlta = false;
+    if (this.maioresnotasComponent) {
+      this.maioresnotasComponent.carregarFilmesEmCartaz();
+    }
   }
-}
-
-  
- 
- 
 }

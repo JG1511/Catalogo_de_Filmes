@@ -17,5 +17,13 @@
 </nav>
 
 <!-- Exibindo os animes (fora do header, no corpo da página) -->
-<app-animes></app-animes>
-<app-maiores-notas></app-maiores-notas>
+<div>
+  @if(mostrarFilmesEmCartaz){
+  <app-maiores-notas></app-maiores-notas>
+  }
+  @if (mostrarAnimesEmAlta) {
+  <app-animes></app-animes>
+  }
+
+
+</div>
