@@ -4,12 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { BuscaFilmeComponent } from "./busca-filme/busca-filme.component";
 import { ListaDeFilmeComponent } from "./lista-de-filme/lista-de-filme.component";
 import { FilmesService } from './filme.service';
+import { FooterComponent } from './footer/footer.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule, BuscaFilmeComponent, ListaDeFilmeComponent],
+  imports: [FormsModule, BuscaFilmeComponent, ListaDeFilmeComponent,FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -18,6 +19,7 @@ export class AppComponent {
   constructor(private filmeService : FilmesService){
   }
   filmes: any[] = [];
+  filmes_imagem : any[] = [];
 
   buscarFilmes (busca : string) : void {
     this.filmeService.buscarFilme(busca).subscribe({ // o subscribe é usado para escutar o observable 
@@ -32,6 +34,10 @@ export class AppComponent {
       },
   });
     
+  }
+
+  buscarImagem(){
+    this.filmeService
   }
 
 }

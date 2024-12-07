@@ -1,0 +1,24 @@
+<div id="filmeCarrossel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item">
+        @for (filme of filmes_imagem; track $index) {
+            <img [src]="'https://image.tmdb.org/t/p/w500' + filme.poster_path" 
+            class="d-block w-100" 
+            [alt]="filme.title">
+       <div class="carousel-caption d-none d-md-block">
+         <h5>{{ filme.title }}</h5>
+         <p>{{ filme.overview }}</p>
+       </div>
+        }
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#filmeCarrossel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#filmeCarrossel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  
