@@ -20,15 +20,16 @@ export class AppComponent {
   filmes: any[] = [];
 
   buscarFilmes (busca : string) : void {
-    this.filmeService.buscarFilme(busca).subscribe({ // o subscribe é usado para escutar o observable 
-      next: (res) => { // é chamado quando observable emite um valor e o res representa um resultado emitido pela api
-          this.filmes = res.results; // a lista de filmes rescebe o filme que ele é chamado
+    this.filmeService.buscarFilme(busca).subscribe({ 
+      next: (res) => { 
+          this.filmes = res.results; 
       },
-      error: (error) => { // quando acontece algum problema com o HTTP
+      error: (error) => { 
           console.error('Erro ao buscar filmes:', error);
       },
       complete: () => {
-          console.log('Requisição completa!'); // É chamado com é completado 
+          console.log('Requisição completa!'); 
+
       },
   });
     

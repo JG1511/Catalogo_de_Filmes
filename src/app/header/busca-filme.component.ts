@@ -1,10 +1,8 @@
 import { AfterViewInit, Component, EventEmitter, Output, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MaioresNotasComponent } from '../cinema/maiores-notas.component';
-
 import { NextMoviesComponent } from "../next-movies/next-movies.component";
 import { AnimesComponent } from "../tendencias/animes.component";
-
 @Component({
   selector: 'app-busca-filme',
   standalone: true,
@@ -12,7 +10,9 @@ import { AnimesComponent } from "../tendencias/animes.component";
   templateUrl: './busca-filme.component.html',
   styleUrls: ['./busca-filme.component.css']  // Corrigido de 'styleUrl' para 'styleUrls'
 })
-export class BuscaFilmeComponent implements AfterViewInit {
+
+export class BuscaFilmeComponent  {
+
   busca: string = '';
   mostrarFilmesEmCartaz: boolean = false;
   mostrarAnimesEmAlta: boolean = false;
@@ -24,11 +24,9 @@ export class BuscaFilmeComponent implements AfterViewInit {
   @ViewChild(MaioresNotasComponent) maioresnotasComponent!: MaioresNotasComponent;
   @ViewChild(NextMoviesComponent) nextmoviesComponent!: NextMoviesComponent;
 
-  ngAfterViewInit(): void {
-    // Aqui garantimos que os componentes filhos foram inicializados corretamente
-    console.log(this.animesComponent);
-    console.log(this.maioresnotasComponent);
-  }
+
+  
+
 
   buscarFilmes(): void {
     if (this.busca.trim() === '') {
@@ -52,7 +50,9 @@ export class BuscaFilmeComponent implements AfterViewInit {
     this.mostrarAnimesEmAlta = false;
     this.mostrarProximosFilmes = false
     if (this.maioresnotasComponent) {
-      this.maioresnotasComponent.carregarFilmesEmCartaz();
+
+      this.maioresnotasComponent.carregarFilmesEmCartaz(); //this.cinemaComponent.carregarFilmesEmCartaz()
+
     }
   }
 

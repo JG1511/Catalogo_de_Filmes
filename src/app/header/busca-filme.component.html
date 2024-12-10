@@ -3,7 +3,6 @@
     <!-- Título à esquerda -->
     <a class="navbar-brand text-light" href="#">Buscar Filme</a>
 
-    <!-- Link para mostrar animes -->
     <a href="javascript:void(0)" (click)="carregarAnimesEmAlta()" class="text-light">Tendências</a>
     <a href="javascript:void(0)" (click)="carregarFilmesEmCartaz()" class="text-light">Cinema</a>
     <a href="javascript:void(0)" (click)="carregarProximosFilmes()" class="text-light">Proximos Lançamentos</a>
@@ -17,6 +16,8 @@
   </div>
 </nav>
 
+
+>>>>>>> master
 <!-- Exibindo os animes (fora do header, no corpo da página) -->
 <div>
   @if(mostrarFilmesEmCartaz){
@@ -26,7 +27,6 @@
   @if (mostrarAnimesEmAlta) {
   <app-animes></app-animes>
   }
-
 
 
 </div>

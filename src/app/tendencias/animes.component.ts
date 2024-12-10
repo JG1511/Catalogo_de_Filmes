@@ -20,3 +20,6 @@ export class AnimesComponent {
     });
   }
 }
+
+//ANIMES === TENDENCIA (FIQUEI COM PREGUIÇA DE MUDAR O NOME)
+

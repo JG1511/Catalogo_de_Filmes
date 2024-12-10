@@ -15,9 +15,11 @@ export class MaioresNotasComponent {
   // Carregar os filmes em cartaz
   carregarFilmesEmCartaz(): void {
     this.cinemaService.getFilmesEmCartaz().subscribe(data => {
-      console.log("clicouu")
       this.filmes = data.results;
       this.mostrarFilmes = true;  // Exibe os filmes após o carregamento
     });
   }
 }
+
+//MAIORES-NOTAS === CINEMA 
+
