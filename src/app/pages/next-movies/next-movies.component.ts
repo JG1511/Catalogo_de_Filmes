@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ProximosService } from './proximos.service';
+import { ProximosService } from '../../services/proximos.service';
 
 @Component({
   selector: 'app-maiores-notas',

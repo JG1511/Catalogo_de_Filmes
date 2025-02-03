@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { FilmesService } from './filme.service';
-import { FooterComponent } from './footer/footer.component';
-import { BuscaFilmeComponent } from "./header/busca-filme.component";
-import { ListaDeFilmeComponent } from "./lista-de-filme/lista-de-filme.component";
+import { FilmesService } from './services/filme.service';
+import { FooterComponent } from './components/footer/footer.component';
+import { BuscaFilmeComponent } from "./components/header/busca-filme.component";
+import { ListaDeFilmeComponent } from "./components/lista-de-filme/lista-de-filme.component";
 
 
 @Component({

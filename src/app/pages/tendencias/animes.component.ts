@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { AnimeService } from './anime.service'; // Importe o serviço de animes
+import { AnimeService } from '../../services/anime.service'; // Importe o serviço de animes
 
 @Component({
   selector: 'app-animes',
+  standalone: true,
   templateUrl: './animes.component.html',
   styleUrls: ['./animes.component.css']
 })

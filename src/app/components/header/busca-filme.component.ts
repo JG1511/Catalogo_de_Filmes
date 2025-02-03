@@ -1,12 +1,15 @@
 import { AfterViewInit, Component, EventEmitter, Output, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MaioresNotasComponent } from '../cinema/maiores-notas.component';
-import { NextMoviesComponent } from "../next-movies/next-movies.component";
-import { AnimesComponent } from "../tendencias/animes.component";
+
+
+import { AnimesComponent } from '../../pages/tendencias/animes.component';
+import { MaioresNotasComponent } from '../../pages/cinema/maiores-notas.component';
+import { NextMoviesComponent } from '../../pages/next-movies/next-movies.component';
+
 @Component({
   selector: 'app-busca-filme',
   standalone: true,
-  imports: [FormsModule, AnimesComponent, MaioresNotasComponent, ],
+  imports: [FormsModule, AnimesComponent, MaioresNotasComponent, NextMoviesComponent],
   templateUrl: './busca-filme.component.html',
   styleUrls: ['./busca-filme.component.css']  // Corrigido de 'styleUrl' para 'styleUrls'
 })

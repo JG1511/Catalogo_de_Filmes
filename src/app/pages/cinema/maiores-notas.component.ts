@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CinemaService } from './cinema.service';
+import { CinemaService } from '../../services/cinema.service';
 
 @Component({
   selector: 'app-maiores-notas',
