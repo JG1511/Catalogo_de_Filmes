@@ -4,12 +4,13 @@ import { FilmesService } from './services/filme.service';
 import { FooterComponent } from './components/footer/footer.component';
 import { BuscaFilmeComponent } from "./components/header/busca-filme.component";
 import { ListaDeFilmeComponent } from "./components/lista-de-filme/lista-de-filme.component";
+import { RouterOutlet } from '@angular/router';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ FormsModule, BuscaFilmeComponent, ListaDeFilmeComponent,FooterComponent],
+  imports: [ FormsModule, BuscaFilmeComponent, ListaDeFilmeComponent,FooterComponent, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
