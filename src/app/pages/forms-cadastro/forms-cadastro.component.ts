@@ -19,4 +19,10 @@ export class FormsCadastroComponent {
   openHome(){
     this.router.navigate(['/home']);
   };
+
+  handleSubmit(){
+    alert(
+      this.userForm.value.name + ' | ' + this.userForm.value.email
+    );
+  }
 }
