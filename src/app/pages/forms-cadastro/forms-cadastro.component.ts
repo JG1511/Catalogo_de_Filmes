@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { User } from '../../models/user';
 
 @Component({
   selector: 'app-forms-cadastro',
@@ -9,20 +10,24 @@ import { Router } from '@angular/router';
   styleUrl: './forms-cadastro.component.css'
 })
 export class FormsCadastroComponent {
-  userForm = new FormGroup({
-    name: new FormControl(''),
-    email : new FormControl(''),
-  });
+  userForm: FormGroup;
 
-  constructor(private router: Router){};
 
-  openHome(){
+  constructor(private router: Router) {
+    this.userForm = new FormGroup({
+      name: new FormControl(''),
+      email: new FormControl(''),
+    });
+  };
+
+  openHome(): void {
     this.router.navigate(['/home']);
   };
 
-  handleSubmit(){
-    alert(
-      this.userForm.value.name + ' | ' + this.userForm.value.email
-    );
+  onSubmit(): void {
+    const user = new User({
+      name: this.userForm.value.name,
+      email: this.userForm.value.email,
+    });
   }
 }

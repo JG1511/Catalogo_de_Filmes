@@ -1,4 +1,4 @@
-export class User {
+export class User { // representação do usuários do nosso sitema
     name: string;
     email: string;
 
