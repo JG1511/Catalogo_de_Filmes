@@ -28,6 +28,7 @@ export class BuscaFilmeComponent  {
   @ViewChild(TendenciaComponent) tendenciaComponet!: TendenciaComponent;
   @ViewChild(MaioresNotasComponent) maioresnotasComponent!: MaioresNotasComponent;
   @ViewChild(NextMoviesComponent) nextmoviesComponent!: NextMoviesComponent;
+ 
 
 
   

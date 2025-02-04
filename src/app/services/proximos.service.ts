@@ -18,7 +18,6 @@ export class ProximosService {
   getProximosFilmes(): Observable<any> {
 
     const url = `${this.apiUrl}upcoming?api_key=${this.apiKey}&language=pt-BR`;  
-
     return this.http.get<any>(url);
   }
 }
