@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from '../../models/user';
 
@@ -14,20 +14,19 @@ export class FormsCadastroComponent {
 
 
   constructor(private router: Router) {
-    this.userForm = new FormGroup({
-      name: new FormControl(''),
-      email: new FormControl(''),
+    this.userForm = new FormGroup({ // captura dos dados utilizando o rectiveFoms, e pedindo uma validação dos campos
+      name: new FormControl('',Validators.required),
+      email: new FormControl('',[Validators.required,Validators.email]),
     });
   };
 
-  openHome(): void {
-    this.router.navigate(['/home']);
-  };
-
-  onSubmit(): void {
-    const user = new User({
-      name: this.userForm.value.name,
-      email: this.userForm.value.email,
-    });
+  onSubmit(): void { //metódo para cadastro do usuário, sendo que só vai funcionar se for preenchida todos os campos
+    if(this.userForm.valid){
+      const user = new User({
+        name: this.userForm.value.name,
+        email: this.userForm.value.email,
+      });
+      this.router.navigate(['/home']);
+    }
   }
 }
