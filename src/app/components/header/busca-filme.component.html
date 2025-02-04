@@ -3,7 +3,7 @@
     <!-- Título à esquerda -->
     <a class="navbar-brand text-light" href="#">Buscar Filme</a>
 
-    <a href="javascript:void(0)" (click)="carregarAnimesEmAlta()" class="text-light">Tendências</a>
+    <a href="javascript:void(0)" (click)="carregarFilmesEmAlta()" class="text-light">Tendências</a>
     <a href="javascript:void(0)" (click)="carregarFilmesEmCartaz()" class="text-light">Cinema</a>
     <a href="javascript:void(0)" (click)="carregarProximosFilmes()" class="text-light">Proximos Lançamentos</a>
 
@@ -24,7 +24,7 @@
   <app-maiores-notas></app-maiores-notas>
   }
 
-  @if (mostrarAnimesEmAlta) {
+  @if (mostrarFilmesEmAlta) {
   <app-tendencia></app-tendencia>
   }
 

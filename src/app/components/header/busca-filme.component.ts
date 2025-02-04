@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 
 
 
+
 import { TendenciaComponent } from '../../pages/tendencia/tendencia.component';
 import { MaioresNotasComponent } from '../../pages/cinema/maiores-notas.component';
 import { NextMoviesComponent } from '../../pages/next-movies/next-movies.component';
@@ -19,7 +20,7 @@ export class BuscaFilmeComponent  {
 
   busca: string = '';
   mostrarFilmesEmCartaz: boolean = false;
-  mostrarAnimesEmAlta: boolean = false;
+  mostrarFilmesEmAlta: boolean = false;
   mostrarProximosFilmes: boolean = false;
   
   @Output() filmeBuscado = new EventEmitter<string>();
@@ -38,8 +39,8 @@ export class BuscaFilmeComponent  {
     this.filmeBuscado.emit(this.busca);
   }
 
-  carregarAnimesEmAlta(): void {
-    this.mostrarAnimesEmAlta = true;
+  carregarFilmesEmAlta(): void {
+    this.mostrarFilmesEmAlta = true;
     this.mostrarFilmesEmCartaz = false;
     this.mostrarProximosFilmes = false
     if (this.tendenciaComponet) {
@@ -49,7 +50,7 @@ export class BuscaFilmeComponent  {
 
   carregarFilmesEmCartaz(): void {
     this.mostrarFilmesEmCartaz = true;
-    this.mostrarAnimesEmAlta = false;
+    this.mostrarFilmesEmAlta = false;
     this.mostrarProximosFilmes = false
     if (this.maioresnotasComponent) {
 
@@ -61,7 +62,7 @@ export class BuscaFilmeComponent  {
   carregarProximosFilmes(): void {
     this.mostrarProximosFilmes = true
     this.mostrarFilmesEmCartaz = false;
-    this.mostrarAnimesEmAlta = false;
+    this.mostrarFilmesEmAlta = false;
     if (this.nextmoviesComponent) {
       this.nextmoviesComponent.carregarProximosFilmes();
     }

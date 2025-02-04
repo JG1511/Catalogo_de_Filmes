@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ProximosService } from '../../services/proximos.service';
 
 @Component({
-  selector: 'app-maiores-notas',
+  selector: 'app-next-movies',
   templateUrl: './next-movies.component.html',
   styleUrls: ['./next-movies.component.css']  // Corrigido de 'styleUrl' para 'styleUrls'
 })
