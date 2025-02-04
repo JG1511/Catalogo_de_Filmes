@@ -7,6 +7,9 @@ import { FormsModule } from '@angular/forms';
 import { TendenciaComponent } from '../../pages/tendencia/tendencia.component';
 import { MaioresNotasComponent } from '../../pages/cinema/maiores-notas.component';
 import { NextMoviesComponent } from '../../pages/next-movies/next-movies.component';
+import { FormsCadastroComponent } from '../../pages/forms-cadastro/forms-cadastro.component';
+import { UserCadastroService } from '../../services/user-cadastro.service';
+import { User } from '../../models/user';
 
 @Component({
   selector: 'app-busca-filme',
@@ -16,7 +19,7 @@ import { NextMoviesComponent } from '../../pages/next-movies/next-movies.compone
   styleUrls: ['./busca-filme.component.css']  // Corrigido de 'styleUrl' para 'styleUrls'
 })
 
-export class BuscaFilmeComponent  {
+export class BuscaFilmeComponent   {
 
   busca: string = '';
   mostrarFilmesEmCartaz: boolean = false;
@@ -29,9 +32,15 @@ export class BuscaFilmeComponent  {
   @ViewChild(MaioresNotasComponent) maioresnotasComponent!: MaioresNotasComponent;
   @ViewChild(NextMoviesComponent) nextmoviesComponent!: NextMoviesComponent;
  
+  @ViewChild(FormsCadastroComponent) nome! : FormsCadastroComponent;
 
+  users: User[];
 
-  
+  constructor(private userCadastroService : UserCadastroService){ 
+
+    this.users = this.userCadastroService.getUsers();
+  }
+
   buscarFilmes(): void {
     if (this.busca.trim() === '') {
       alert("Por favor, insira o nome do filme");
@@ -68,4 +77,5 @@ export class BuscaFilmeComponent  {
       this.nextmoviesComponent.carregarProximosFilmes();
     }
   }
+
 }

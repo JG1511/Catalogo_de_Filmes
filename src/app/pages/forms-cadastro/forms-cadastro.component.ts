@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from '../../models/user';
+import { UserCadastroService } from '../../services/user-cadastro.service';
 
 @Component({
   selector: 'app-forms-cadastro',
@@ -13,7 +14,7 @@ export class FormsCadastroComponent {
   userForm: FormGroup;
 
 
-  constructor(private router: Router) {
+  constructor(private router: Router,private userCadastroService: UserCadastroService) {
     this.userForm = new FormGroup({ // captura dos dados utilizando o rectiveFoms, e pedindo uma validação dos campos
       name: new FormControl('',Validators.required),
       email: new FormControl('',[Validators.required,Validators.email]),
@@ -26,7 +27,10 @@ export class FormsCadastroComponent {
         name: this.userForm.value.name,
         email: this.userForm.value.email,
       });
+      this.userCadastroService.addUsers(user);
       this.router.navigate(['/home']);
     }
   }
+
+ 
 }
