@@ -10,6 +10,7 @@ import { NextMoviesComponent } from '../../pages/next-movies/next-movies.compone
 import { FormsCadastroComponent } from '../../pages/forms-cadastro/forms-cadastro.component';
 import { UserCadastroService } from '../../services/user-cadastro.service';
 import { User } from '../../models/user';
+import { LocalStorageService } from '../../services/local-storage.service';
 
 @Component({
   selector: 'app-busca-filme',
@@ -36,9 +37,10 @@ export class BuscaFilmeComponent   {
 
   users: User[];
 
-  constructor(private userCadastroService : UserCadastroService){ 
+  constructor(private userCadastroService : UserCadastroService, private localStorage: LocalStorageService){ 
 
-    this.users = this.userCadastroService.getUsers();
+    // this.users = this.userCadastroService.getUsers();
+    this.users = this.localStorage.getLocalStorage('1');
   }
 
   buscarFilmes(): void {
