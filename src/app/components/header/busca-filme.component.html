@@ -5,12 +5,13 @@
     <a href="javascript:void(0)" (click)="carregarFilmesEmAlta()" class="text-light">Tendências</a>
     <a href="javascript:void(0)" (click)="carregarFilmesEmCartaz()" class="text-light">Cinema</a>
     <a href="javascript:void(0)" (click)="carregarProximosFilmes()" class="text-light">Proximos Lançamentos</a>
-    <p>
-      @for (user of users; track $index) {
+    
+      <!-- @for (user of users; track $index) { -->
         <p>Nome: {{user.name}}</p>
+        <br/>
         <p>Email: {{user.email}}</p>
-      }
-    </p>
+      <!-- } -->
+  
     <!-- Formulário de busca à direita -->
     <div class="d-flex">
       <input type="text" [(ngModel)]="busca" placeholder="Digite o nome do filme" class="form-control me-2"

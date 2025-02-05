@@ -35,12 +35,12 @@ export class BuscaFilmeComponent   {
  
   @ViewChild(FormsCadastroComponent) nome! : FormsCadastroComponent;
 
-  users: User[];
+  user: User;
 
   constructor(private userCadastroService : UserCadastroService, private localStorage: LocalStorageService){ 
 
     // this.users = this.userCadastroService.getUsers();
-    this.users = this.localStorage.getLocalStorage('1');
+    this.user = this.localStorage.getLocalStorage("user");
   }
 
   buscarFilmes(): void {
