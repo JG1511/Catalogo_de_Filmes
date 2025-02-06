@@ -1,16 +1,16 @@
-import { AfterViewInit, Component, EventEmitter, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 
 
 
-import { TendenciaComponent } from '../../pages/tendencia/tendencia.component';
-import { MaioresNotasComponent } from '../../pages/cinema/maiores-notas.component';
-import { NextMoviesComponent } from '../../pages/next-movies/next-movies.component';
-import { FormsCadastroComponent } from '../../pages/forms-cadastro/forms-cadastro.component';
-import { UserCadastroService } from '../../services/user-cadastro.service';
 import { User } from '../../models/user';
+import { MaioresNotasComponent } from '../../pages/cinema/maiores-notas.component';
+import { FormsCadastroComponent } from '../../pages/forms-cadastro/forms-cadastro.component';
+import { NextMoviesComponent } from '../../pages/next-movies/next-movies.component';
+import { TendenciaComponent } from '../../pages/tendencia/tendencia.component';
 import { LocalStorageService } from '../../services/local-storage.service';
+import { UserCadastroService } from '../../services/user-cadastro.service';
 
 @Component({
   selector: 'app-busca-filme',
@@ -42,6 +42,7 @@ export class BuscaFilmeComponent   {
     // this.users = this.userCadastroService.getUsers();
     this.user = this.localStorage.getLocalStorage("user");
   }
+
 
   buscarFilmes(): void {
     if (this.busca.trim() === '') {
