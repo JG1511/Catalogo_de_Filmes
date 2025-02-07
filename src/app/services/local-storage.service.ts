@@ -11,8 +11,6 @@ export class LocalStorageService {
     this.storage = window.localStorage;
   }
 
-
-
   setLocalStorage(token: string, user: any): boolean {
     if (this.storage) {
       this.storage.setItem("token", token); 
@@ -29,7 +27,7 @@ export class LocalStorageService {
     }
     return null;
   }
-  
+
   removeLocalStorage(token : string) : void{
     this.storage.removeItem(token);
   }

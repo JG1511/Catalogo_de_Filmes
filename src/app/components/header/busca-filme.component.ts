@@ -43,6 +43,10 @@ export class BuscaFilmeComponent   {
     this.user = this.localStorage.getLocalStorage("user");
   }
 
+  removerLocalStorage() : void{
+    this.localStorage.removeLocalStorage("user")
+  }
+
 
   buscarFilmes(): void {
     if (this.busca.trim() === '') {
