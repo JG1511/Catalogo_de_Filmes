@@ -19,7 +19,13 @@
 
             <div class="text-center">
                 <button type="submit" class="btn w-100" style="background-color:#f4c44e; border: none; color: black;"
-                    [disabled]="userForm.invalid">Cadastrar</button>
+                    [disabled]="userForm.invalid">Logar</button>
+            </div>
+            <br>
+
+            <div class="text-center">
+                <button type="submit" class="btn w-100" style="background-color:#f4c44e; border: none; color: black;"
+                     (click)="cadastro()">Cadastrar</button>
             </div>
         </form>
     </div>
