@@ -5,7 +5,7 @@ import { FormsLoginComponent } from './pages/forms-login/forms-login.component';
 
 export const routes: Routes = [
     {
-       path : 'login',
+       path : 'user-cadastro',
        title: 'Forms de login',
        component: FormsCadastroComponent 
     },

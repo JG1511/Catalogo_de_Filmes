@@ -27,7 +27,7 @@ export class FormsLoginComponent {
 
     if (!storageUser) {
       console.warn('Nenhum usuário encontrado. Redirecionando para o Cadastro');
-      this.router.navigate(['/login']);
+      this.router.navigate(['/user-cadastro']);
       return;
     }
     if (this.userForm.value.name === storageUser.name && this.userForm.value.email === storageUser.email) {
@@ -35,7 +35,7 @@ export class FormsLoginComponent {
       this.router.navigate(['/home']);
     } else {
       console.warn('Usuário não encontrado ou dados incorretos. Redirecionando para Login...');
-      this.router.navigate(['/login']);
+      this.router.navigate(['/user-cadastro']);
     }
   }
 }
