@@ -24,16 +24,15 @@ export class FormsCadastroComponent {
 
   onSubmit(): void { //metódo para cadastro do usuário, sendo que só vai funcionar se for preenchida todos os campos
     if(this.userForm.valid){
-      if(this.userForm.valid){
         const token = '1'
         const user = new User({
           name: this.userForm.value.name,
           email: this.userForm.value.email,
         });
         this.localStorage.setLocalStorage(token,user)
-        this.router.navigate(['/home']);
+        this.router.navigate(['/user-login']);
         this.userCadastroService.addUsers(user);
-      }
+      
   }
 }
 }

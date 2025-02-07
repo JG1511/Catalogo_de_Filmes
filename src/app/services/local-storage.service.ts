@@ -20,9 +20,9 @@ export class LocalStorageService {
     return false;
   }
 
-  getLocalStorage(chave:string) : any{
+  getLocalStorage(token:string) : any{
     if(this.storage){
-     const item = this.storage.getItem(chave);
+     const item = this.storage.getItem(token);
      return item ? JSON.parse(item) : null; // faz a leitura do objeto
     }
     return null;
