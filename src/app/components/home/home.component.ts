@@ -4,15 +4,17 @@ import { ListaDeFilmeComponent } from '../lista-de-filme/lista-de-filme.componen
 import { FooterComponent } from '../footer/footer.component';
 import { FilmesService } from '../../services/filme.service';
 
+
 @Component({
   selector: 'app-home',
-  imports: [BuscaFilmeComponent,ListaDeFilmeComponent,FooterComponent],
+  imports: [BuscaFilmeComponent,ListaDeFilmeComponent,FooterComponent, ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
   constructor(private filmeService : FilmesService){ }
-
+   
+ 
   filmes : any[] = [];
 
   buscarFilmes (busca: string) : void {

@@ -26,7 +26,6 @@ export class BuscaFilmeComponent {
   mostrarProximosFilmes: string = '';
   
   @Output() filmeBuscado = new EventEmitter<string>();
-
   @ViewChild(TendenciaComponent) tendenciaComponet!: TendenciaComponent;
   @ViewChild(MaioresNotasComponent) maioresnotasComponent!: MaioresNotasComponent;
   @ViewChild(NextMoviesComponent) nextmoviesComponent!: NextMoviesComponent;

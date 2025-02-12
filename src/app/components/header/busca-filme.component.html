@@ -1,30 +1,19 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color:#04192f">
   <div class="container-fluid d-flex justify-content-between align-items-center">
-    <!-- Título à esquerda -->
     <p class="navbar-brand text-light">
       <a style="color: #fbbc04;">User:</a> {{user.name}}
+      <!-- Ajustando o botão para ser menor -->
       <a href="#"
-        style="display: inline-block; background-color: red; color: aliceblue; font-size: 14px; width: 90px; height: 30px; text-align: center; line-height: 30px; border: 2px solid transparent; border-radius: 15px; text-decoration: none; cursor: pointer; transition: background-color 0.3s, transform 0.2s;"
+        style="display: inline-block; background-color: red; color: aliceblue; font-size: 12px; width: 70px; height: 25px; text-align: center; line-height: 25px; border: 2px solid transparent; border-radius: 12px; text-decoration: none; cursor: pointer; transition: background-color 0.3s, transform 0.2s; margin-top: 10px;"
         onmouseover="this.style.backgroundColor='darkred'; this.style.transform='scale(1.1)';"
         onmouseout="this.style.backgroundColor='red'; this.style.transform='scale(1)';" (click)="removerLocalStorage()">
         Sair
       </a>
-
-
-
-
     </p>
     <a href="javascript:void(0)" (click)="carregarFilmesEmAlta()" class="text-light">Tendências</a>
     <a href="javascript:void(0)" (click)="carregarFilmesEmCartaz()" class="text-light">Cinema</a>
     <a href="javascript:void(0)" (click)="carregarProximosFilmes()" class="text-light">Proximos Lançamentos</a>
 
-    <!-- @for (user of users; track $index) { -->
-
-    <!-- <p>Email: {{user.email}}</p> -->
-
-    <!-- } -->
-
-    <!-- Formulário de busca à direita -->
     <div class="d-flex">
       <input type="text" [(ngModel)]="busca" placeholder="Digite o nome do filme" class="form-control me-2"
         (keydown.enter)="buscarFilmes()" />
@@ -32,8 +21,6 @@
     </div>
   </div>
 </nav>
-
-
 
 <!-- Exibindo os animes (fora do header, no corpo da página) -->
 

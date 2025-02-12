@@ -1,27 +1,30 @@
 <div class="container">
     <!-- Barra de pesquisa -->
-    <div>
-        <!-- Mostrar se houver filmes -->
-        @if(filmes.length > 0) {
-        <div class="row mt-5">
-            <h3 class="col-12 text-center">Filmes Encontrados:</h3>
+    <div style="margin-top: 80px;">
 
-            <!-- Cards de filmes -->
+        @if(filmes.length > 0) {
+        <div class="row g-4">
+            <h3 class="col-12 text-center">Filmes encontrados:</h3>
+
             @for (filme of filmes; track $index) {
             <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 d-flex justify-content-center">
+
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" [src]="'https://image.tmdb.org/t/p/w500' + filme.poster_path"
                         alt="{{ filme.title }}">
                     <div class="card-body">
                         <h5 class="card-title">{{ filme.title }}</h5>
-                        <!-- Mudando a cor da nota para dourado -->
                         <p class="card-text text-gold">Nota: {{ filme.vote_average }}</p>
-                      
                     </div>
                 </div>
             </div>
             }
         </div>
+
+        } @else{
+       
+        <img src="https://i.pinimg.com/originals/9b/3f/9c/9b3f9c24d9fd5f297ae433eb33d93514.png" alt="" srcset=""
+            style="max-width: 50%; display: block; margin:20px auto 0 ;">
         }
     </div>
 </div>
