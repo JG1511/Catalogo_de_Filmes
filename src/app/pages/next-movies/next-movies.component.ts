@@ -3,6 +3,7 @@ import { ProximosService } from '../../services/proximos.service';
 
 @Component({
   selector: 'app-next-movies',
+  imports : [],
   templateUrl: './next-movies.component.html',
   styleUrls: ['./next-movies.component.css']  // Corrigido de 'styleUrl' para 'styleUrls'
 })
