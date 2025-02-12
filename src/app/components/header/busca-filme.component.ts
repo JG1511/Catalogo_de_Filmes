@@ -80,6 +80,7 @@ export class BuscaFilmeComponent {
     this.filmeBuscado.emit('') ;
     if (this.nextmoviesComponent) {
       this.nextmoviesComponent.carregarProximosFilmes();
+    
     }
   }
 }
