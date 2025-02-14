@@ -6,7 +6,7 @@
             <!-- 'mb-3' para reduzir a margem inferior -->
             <div class="card" style="width: 18rem;">
                 <img class="card-img-top" [src]="'https://image.tmdb.org/t/p/w500/' + filme.poster_path"
-                    alt="Anime Image">
+                    alt="Anime Image" loading="lazy">
                 <div class="card-body">
                     <h5 class="card-title">{{ filme.title || filme.name }}</h5>
                     <p>{{ filme.release_date}}</p>
@@ -16,5 +16,5 @@
         </div>
         }
     </div>
-    } 
+    }
 </div>

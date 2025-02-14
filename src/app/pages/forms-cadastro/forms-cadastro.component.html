@@ -1,6 +1,7 @@
 <div class="container-fluid vh-100 d-flex flex-column flex-md-row">
     <div class="col-md-6 p-0" style="height: 100vh;">
-        <img src="https://i.redd.it/p9jtsvxck9j51.png" class="img-fluid w-100 h-100 object-fit-cover" alt="Imagem">
+        <img src="https://i.redd.it/p9jtsvxck9j51.png" loading="lazy" class="img-fluid w-100 h-100 object-fit-cover"
+            alt="Imagem">
     </div>
     <div class="col-md-6 d-flex align-items-center justify-content-center bg-light">
         <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="p-4 border rounded shadow-sm w-75">

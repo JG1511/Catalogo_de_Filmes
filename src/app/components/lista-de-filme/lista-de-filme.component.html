@@ -10,21 +10,25 @@
             <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 d-flex justify-content-center">
 
                 <div class="card" style="width: 18rem;">
+                    @defer {
                     <img class="card-img-top" [src]="'https://image.tmdb.org/t/p/w500' + filme.poster_path"
-                        alt="{{ filme.title }}">
+                        alt="{{ filme.title }}" loading="lazy">
                     <div class="card-body">
                         <h5 class="card-title">{{ filme.title }}</h5>
                         <p class="card-text text-gold">Nota: {{ filme.vote_average }}</p>
                     </div>
+                    } @loading {
+                    <p>Carregando...</p>
+                    }
                 </div>
             </div>
             }
         </div>
 
         } @else{
-       
+
         <img src="https://i.pinimg.com/originals/9b/3f/9c/9b3f9c24d9fd5f297ae433eb33d93514.png" alt="" srcset=""
-            style="max-width: 50%; display: block; margin:20px auto 0 ;">
+            style="max-width: 50%; display: block; margin:20px auto 0 ;" loading="eager">
         }
     </div>
 </div>

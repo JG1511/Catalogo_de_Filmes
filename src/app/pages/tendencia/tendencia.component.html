@@ -2,9 +2,11 @@
     @if(mostrarTendencia){
     <div class="row g-3"> <!-- 'g-3' para reduzir o espaço entre os cards -->
         @for(filme of tendicias; track $index){
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3 d-flex justify-content-center"> <!-- 'mb-3' para reduzir a margem inferior -->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3 d-flex justify-content-center">
+            <!-- 'mb-3' para reduzir a margem inferior -->
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" [src]="'https://image.tmdb.org/t/p/w500/' + filme.poster_path" alt="Anime Image">
+                <img class="card-img-top" [src]="'https://image.tmdb.org/t/p/w500/' + filme.poster_path"
+                    alt="Anime Image" loading="lazy">
                 <div class="card-body">
                     <h5 class="card-title">{{ filme.title || filme.name }}</h5>
                 </div>
@@ -14,4 +16,3 @@
     </div>
     }
 </div>
-

@@ -13,14 +13,7 @@ export class NextMoviesComponent {
 
   constructor(private proximosService: ProximosService) { }
 
-  // Carregar os filmes em cartaz
-  // carregarProximosFilmes(): void {
-  //   this.proximosService.getProximosFilmes().subscribe(data => {
-  //     console.log("clicouu")
-  //     this.proximosFilmes = data.results;
-  //     this.mostrarProximosFilmes = true;  // Exibe os filmes após o carregamento
-  //   });
-  // }
+ 
   carregarProximosFilmes(): void {
     this.proximosService.getProximosFilmes().subscribe({
       next: (res) => {
